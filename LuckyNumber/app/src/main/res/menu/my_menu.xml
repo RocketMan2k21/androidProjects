@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/start"
+        android:title="START NEW GAME"
+        android:icon="@color/design_default_color_primary_dark"/>
+
+    <item
+        android:id="@+id/continue_game"
+        android:title="CONTINUE"
+        android:icon="@drawable/wallpaper_blue"/>
+
+    <item
+        android:id="@+id/exit"
+        android:title="EXIT"
+        android:icon="@color/teal_700"/>
+</menu>
