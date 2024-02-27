@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="profile"
+            type="com.example.mymovie.db.entity.Profile" />
+        <variable
+            name="clickHandler"
+            type="com.example.mymovie.SignUpActivity.SignUpActivityClickHandlers" />
+    </data>
+    
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignUpActivity">
+
+    <TextView
+        android:id="@+id/logTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login:"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/passTitle"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.4" />
+
+    <EditText
+        android:id="@+id/userLogin"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:textSize="26sp"
+        android:text="@={profile.login}"
+        app:layout_constraintBaseline_toBaselineOf="@+id/logTitle"
+        app:layout_constraintEnd_toEndOf="@+id/userPassword" />
+
+
+    <TextView
+        android:id="@+id/passTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Password:"
+        android:layout_marginStart="30dp"
+        android:textSize="26sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logTitle" />
+
+    <EditText
+        android:id="@+id/userPassword"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:text="@={profile.password}"
+        android:layout_marginStart="5sp"
+        android:inputType="textPassword"
+        android:textSize="26sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/passTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/passTitle" />
+
+    <TextView
+        android:id="@+id/emailTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email:"
+        android:layout_marginTop="10dp"
+        android:textSize="26sp"
+        app:layout_constraintEnd_toEndOf="@+id/passTitle"
+        app:layout_constraintTop_toBottomOf="@+id/passTitle" />
+
+    <EditText
+        android:id="@+id/userEmail"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="@={profile.email}"
+        android:textSize="26sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/emailTitle"
+        app:layout_constraintEnd_toEndOf="@+id/userPassword" />
+
+    <Button
+        android:id="@+id/signBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SIGN UP"
+        android:textSize="24sp"
+        android:onClick="@{clickHandler::onSignClick}"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.75"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
